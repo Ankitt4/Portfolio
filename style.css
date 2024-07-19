@@ -1,0 +1,437 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;1,200&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Nunito', sans-serif;
+}
+
+:root {
+    --bg-color: #191f36;
+    --snd-bg-color: #262840;
+    --text-color: #fff;
+    --main-color: #5982f4;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--snd-bg-color);
+    padding: 1.8rem 9%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo {
+    color: var(--main-color);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.header #menu-icon {
+    font-size: 3rem;
+    color: var(--main-color);
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar a {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-left: 3rem;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    padding-top: 0;
+}
+
+.home .home-content {
+    flex: 1 1 45rem;
+    padding-top: 10rem;
+}
+
+.home-content h3 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+}
+
+.home-content p {
+    font-size: 1.7rem;
+    margin: 1.5rem 0;
+    color: #ccc;
+}
+
+.social-media a {
+    color: var(--main-color);
+    font-size: 2.5rem;
+    margin-right: 2rem;
+}
+
+.social-media a:hover {
+    color: var(--text-color);
+}
+
+.btn {
+    font-size: 1.8rem;
+    display: inline-block;
+    padding: 1rem 4rem;
+    background: var(--main-color);
+    color: var(--text-color);
+    border-radius: 5rem;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background: var(--text-color);
+    color: var(--main-color);
+}
+
+.home-img {
+    flex: 1 1 45rem;
+}
+
+.home-img img {
+    width: 100%;
+    /* border-radius: 0 30rem 0 30rem; */
+    border-radius: 2rem;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.about .about-img {
+    flex: 1 1 45rem;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.about .about-content {
+    flex: 1 1 45rem;
+}
+
+.heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+.about-content h3 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    font-weight: 500;
+}
+
+.about-content p {
+    font-size: 1.7rem;
+    color: #ccc;
+}
+
+.services {
+    text-align: center;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.services-box {
+    flex: 1 1 30rem;
+    padding: 4rem;
+    background: var(--snd-bg-color);
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.services-box:hover {
+    transform: translateY(-1rem);
+}
+
+.services-box i {
+    color: var(--main-color);
+    font-size: 5rem;
+}
+
+.services-box h3 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 1.5rem 0;
+}
+
+.services-box p {
+    font-size: 1.6rem;
+    color: #ccc;
+}
+
+.portfolio {
+    text-align: center;
+}
+
+.portfolio-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.portfolio-box {
+    position: relative;
+    flex: 1 1 30rem;
+}
+
+.portfolio-box img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.portfolio-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    opacity: 1;
+}
+
+.portfolio-layer h4 {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.portfolio-layer p {
+    font-size: 1.6rem;
+    padding: 1rem 3rem;
+    color: #ccc;
+}
+
+.portfolio-layer i {
+    color: var(--main-color);
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact form {
+    margin-top: 2rem;
+}
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 1.6rem;
+    font-size: 1.6rem;
+    background: var(--snd-bg-color);
+    color: var(--text-color);
+    border-radius: 0.5rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 1.6rem;
+    font-size: 1.6rem;
+    background: var(--snd-bg-color);
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+}
+
+footer {
+    padding: 1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-text {
+    font-size: 1.8rem;
+    color: #ccc;
+}
+
+.footer-iconTop a {
+    color: var(--main-color);
+    font-size: 3rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    html {
+        font-size: 58%;
+    }
+
+    .header {
+        padding: 1.8rem 6%;
+    }
+
+    section {
+        padding: 10rem 6% 2rem;
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 1.8rem 4%;
+    }
+
+    section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .services-container,
+    .portfolio-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .services-box,
+    .portfolio-box {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 52%;
+    }
+
+    .header #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        gap: 2rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--snd-bg-color);
+        padding: 2rem;
+        border-radius: 0 0 1rem 1rem;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        font-size: 2rem;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+
+    .header .logo {
+        font-size: 2.5rem;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content p {
+        font-size: 1.5rem;
+    }
+
+    .about-content h3 {
+        font-size: 2rem;
+    }
+
+    .services-box h3,
+    .portfolio-layer h4 {
+        font-size: 2rem;
+    }
+}
